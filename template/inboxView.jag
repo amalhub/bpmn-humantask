@@ -1,0 +1,35 @@
+<div class="col-sm-12">
+	<div class="panel panel-primary">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Inbox</div>
+
+	  <!-- Table -->
+	  <table class="table">
+	    <thead>
+	    	<tr>
+	    		<th>Task ID</th>
+	    		<th>Task Name</th>
+	    		<th>Due Date</th>
+	    	</tr>
+	    </thead>
+	    <tbody>
+	    	<% for(var i=0; i<task.length; i++){ %>
+	    	<tr>
+	    		<td><a href="inboxTask?id=<%=task[i].id%>"><%=task[i].id%></a></td>
+				<td><%=task[i].name%></td>
+				<td><%=task[i].date%></td>
+	    	</tr>
+	    	<% } %>
+	    </tbody>
+	  </table>
+	</div>
+	<ul class="pagination">
+		<li class="disabled"><a href="#">&laquo;</a></li>
+		<li class="active"><a href="inbox?pagination=1">1</a></li>
+		<li><a href="inbox?pagination=2">2</a></li>
+		<li><a href="inbox?pagination=3">3</a></li>
+		<li><a href="inbox?pagination=4">4</a></li>
+		<li><a href="inbox?pagination=5">5</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul>
+</div>

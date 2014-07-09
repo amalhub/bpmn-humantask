@@ -1,0 +1,42 @@
+<div class="col-sm-12">
+	<ol class="breadcrumb">
+	  <li><a href="#">Home</a></li>
+	  <li><a href="inbox">Inbox</a></li>
+	  <li class="active">Task:<%=id%></li>
+	</ol>
+	<div class="panel panel-primary">
+	  <div class="panel-heading"><%=taskData.name%></div>
+	  <table class="table">
+	    <tbody>
+	    	<tr>
+	    		<th>Description:</th>
+				<td colspan='2'>Task description</td>
+	    	</tr>
+	    	<tr>
+	    		<th>Process ID:</th>
+	    		<td colspan='2'><%=taskData.pid%></td>
+	    	</tr>
+	    	<tr>
+	    		<th>People:</th>
+	    		<td>admin <button class="btn btn-xs btn-info">Transfer</button></td>
+	    		<td><%=taskData.assignee%> <button class="btn btn-xs btn-info">Reassign</button></td>
+	    	</tr>
+	    	<tr>
+	    		<th>Subtasks: <button class="btn btn-xs btn-info">+</button></th>
+	    		<td colspan='2'>No sub tasks<!--a href="#">subtask </a><button class="btn btn-xs btn-info">Remove</button--></td>
+	    	</tr>
+	    	<tr>
+	    		<th>Fill in the form:</th>
+	    		<td colspan='2'>
+	    			<form>
+	    				<table><%=formContent%></table>
+	    			</form>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td align='center' colspan='3'><button class="btn btn-info">Complete task</button></td>
+	    	</tr>
+	    </tbody>
+	  </table>
+	</div>
+</div>
