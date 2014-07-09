@@ -1,0 +1,19 @@
+<%
+var start = request.getParameter("pagination");
+if(start != null && start > 0){
+	start = (start - 1)*10 ;
+}else{
+	start = 0;
+}
+var headers = {"Authorization":"Basic " + auth};
+var user = "admin";
+var task = [];
+var tasks = get( httpUrl + "/bpmnrest/tasks?assignee=" + user + "&start=" + start + "&size=10&sort=id&order=asc" ,null, headers, "json" ).data;
+for(var i=0; i < tasks.data.length; i++){
+	task.push({
+		id:tasks.data[i].id,
+		name:tasks.data[i].name,
+		date:tasks.data[i].dueDate
+	});
+}
+%>

@@ -1,0 +1,10 @@
+<%
+var httpUrl = "http://localhost:9763";
+var data = {
+	title : "BPMN Humantask",
+	author: "Amal Gunatilake",
+	footer: "&copy; 2008 - 2014 WSO2 Inc. All Rights Reserved."
+};
+var encoder = require("/js/encoder.js");
+var auth = encoder.encode("admin:admin");
+%>
