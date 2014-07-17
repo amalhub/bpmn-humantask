@@ -18,8 +18,8 @@
 	    	</tr>
 	    	<tr>
 	    		<th>People:</th>
-	    		<td>admin <button class="btn btn-xs btn-info">Transfer</button></td>
-	    		<td><%=taskData.assignee%> <button class="btn btn-xs btn-info">Reassign</button></td>
+	    		<td><%=taskData.owner%> <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#transfer">Transfer</button></td>
+	    		<td><%=taskData.assignee%> <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#reassign">Reassign</button></td>
 	    	</tr>
 	    	<tr>
 	    		<th>Subtasks: <button class="btn btn-xs btn-info">+</button></th>
@@ -34,9 +34,45 @@
 	    		</td>
 	    	</tr>
 	    	<tr>
-	    		<td align='center' colspan='3'><button class="btn btn-info">Complete task</button></td>
+	    		<td align='center' colspan='3'>
+	    			<button onclick="completeTask($('form').serializeArray(), <%=id%>);" class="btn btn-info">Complete task</button>
+	    		</td>
 	    	</tr>
 	    </tbody>
 	  </table>
 	</div>
+	<div class="modal fade" id="transfer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog model-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Transfer Task</h4>
+                </div>
+                <div class="modal-body">
+                    Username <input type="textbox" id="transferName"> </input><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="transfer($('#transferName').val(), <%=id%>);">Save</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="reassign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog model-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Reassign Task</h4>
+                </div>
+                <div class="modal-body">
+                    Username <input type="textbox" id="reassignName"> </input><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="reassign($('#reassignName').val(), <%=id%>);">Save</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </div>
