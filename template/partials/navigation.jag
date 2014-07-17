@@ -25,7 +25,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Processes <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Process Definitions</a></li>
-              <li><a href="#">Instances</a></li>
+              <li><a href="process">Instances</a></li>
             </ul>
           </li>
         </ul>

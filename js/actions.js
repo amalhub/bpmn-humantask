@@ -58,3 +58,20 @@ function transfer(username, id){
         }
     });
 }
+
+function startProcess(processDefId){
+    var url = "/bpmn-humantask/send?req=/bpmnrest/runtime/process-instances";
+    var body = { 
+      "processDefinitionId": processDefId
+    };
+
+    $.ajax({
+        type: 'POST',
+        contentType: "application/json",
+        url: httpUrl + url,
+        data: JSON.stringify(body),
+        success: function(data){
+            window.location=httpUrl+"/bpmn-humantask/inbox";
+        }
+    });
+}
