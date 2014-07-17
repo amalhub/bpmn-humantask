@@ -5,6 +5,6 @@ var data = {
 	author: "Amal Gunatilake",
 	footer: "&copy; 2005 - 2014 WSO2 Inc. All Rights Reserved."
 };
-var encoder = require("/js/encoder.js");
+var encoder = require("/assets/encoder.js");
 var auth = encoder.encode("admin:admin");
 %>

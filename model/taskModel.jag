@@ -10,7 +10,7 @@ var taskData = {
 	assignee:task.assignee,
 	subtask:task.subtaskList
 };
-var formGenTool = require("/js/dynamicFormGen.js");
+var formGenTool = require("/assets/dynamicFormGen.js");
 var formData = get( httpUrl + "/bpmnrest/form/" + id + "/properties" ,null, headers, "json" ).data;
 var formContent = formGenTool.generateForm(formData.data);
 %>
