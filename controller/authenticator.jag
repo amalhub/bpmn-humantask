@@ -1,5 +1,5 @@
 <%
-	var authentication = require("/js/authentication.js");
+	var authentication = require("/assets/authentication.js");
 	var username = request.getParameter("username");
 	var password = request.getParameter("password");
 	if(username == "" || password == ""){

@@ -5,7 +5,7 @@ if(!session.get("authSuccess")){
 	response.sendRedirect("login");
 } else {
 	var httpUrl = "http://localhost:9763";
-	var encoder = require("/js/encoder.js");
+	var encoder = require("/assets/encoder.js");
 	var auth = encoder.encode("admin:admin");
 	var contentType = request.getContentType();
 	var headers = {
